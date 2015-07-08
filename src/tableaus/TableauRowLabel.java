@@ -3,7 +3,7 @@
  */
 package tableaus;
 
-import gen.Candidate;
+import gen.candidate.Candidate;
 
 import java.util.ArrayList;
 import java.util.List;

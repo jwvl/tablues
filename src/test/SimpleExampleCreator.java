@@ -5,10 +5,12 @@ package test;
 
 import eval.Constraint;
 import eval.ConstraintSet;
-import gen.Candidate;
-import gen.CandidateSet;
 import gen.Grammar;
-import gen.Input;
+import gen.candidate.Candidate;
+import gen.candidate.CandidateSet;
+import gen.candidate.StringCandidate;
+import gen.input.Input;
+import gen.input.StringInput;
 
 /**
  * @author jwvl
@@ -25,11 +27,11 @@ public class SimpleExampleCreator {
 		Constraint c_c = Constraint.createInstance("*2A");
 		Constraint c_d = Constraint.createInstance("*2B");
 		
-		Input inp = Input.createInstance("(1A)");
-		Candidate can_a = Candidate.createInstance("(1A,2A,3A)");
-		Candidate can_b = Candidate.createInstance("(1A,2A,3B)");
-		Candidate can_c = Candidate.createInstance("(1A,2B,3B)");
-		Candidate can_d = Candidate.createInstance("(1A,2B,3C)");
+		Input inp = StringInput.createInstance("(1A)");
+		Candidate can_a = StringCandidate.createInstance("(1A,2A,3A)");
+		Candidate can_b = StringCandidate.createInstance("(1A,2A,3B)");
+		Candidate can_c = StringCandidate.createInstance("(1A,2B,3B)");
+		Candidate can_d = StringCandidate.createInstance("(1A,2B,3C)");
 		
 		CandidateSet cs = CandidateSet.createInstance(inp);
 		cs.addCandidates(can_a, can_b, can_c, can_d);

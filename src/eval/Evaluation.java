@@ -3,8 +3,8 @@
  */
 package eval;
 
-import gen.CandidateSet;
-import gen.Input;
+import gen.candidate.CandidateSet;
+import gen.input.Input;
 import harmony.Harmony;
 import hierarchy.Hierarchy;
 

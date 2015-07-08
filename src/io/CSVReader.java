@@ -5,10 +5,12 @@ package io;
 
 import eval.Constraint;
 import eval.ConstraintSet;
-import gen.Candidate;
-import gen.CandidateSet;
 import gen.Grammar;
-import gen.Input;
+import gen.candidate.Candidate;
+import gen.candidate.CandidateSet;
+import gen.candidate.StringCandidate;
+import gen.input.Input;
+import gen.input.StringInput;
 
 import java.util.List;
 
@@ -47,11 +49,11 @@ public class CSVReader {
 			constraints.add(toAdd);
 		}
 		List<String> candidateNames = contents.getColumnContents(0);
-		Input input = Input.createInstance(contents.getColName(0));
+		Input input = StringInput.createInstance(contents.getColName(0));
 		CandidateSet canSet = CandidateSet.createInstance(input);
 		for (int i=0; i < contents.getNumRows(); i++) {
 			String candidateString = candidateNames.get(i);
-			Candidate iCandidate = Candidate.createInstance(candidateString);
+			Candidate iCandidate = StringCandidate.createInstance(candidateString);
 			for (int j=0; j < constraints.size(); j++) {
 				Constraint current = constraints.get(j);
 				int colIndex = j+1;

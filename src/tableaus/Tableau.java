@@ -8,7 +8,6 @@ import harmony.Harmony;
 import java.util.Arrays;
 import java.util.List;
 
-import util.StringUtil;
 import eval.Constraint;
 import eval.EvaluatedCandidate;
 import eval.Evaluation;
@@ -37,7 +36,6 @@ public class Tableau {
 		fillCells();
 		setRowLabels();
 		setColNames();
-
 	}
 
 	public static Tableau createInstance(Evaluation e) {
@@ -109,44 +107,28 @@ public class Tableau {
 		}
 	}
 
-	public String toPaddedText() {
-		int extraPadding = 1;
-		String inputString = "Input: " + evaluation.getInput().toString();
-		StringBuffer result = new StringBuffer();
-		String winnerString = "--> ";
-		// Find width of col -1
-		int rowLabelWidth = inputString.length() + winnerString.length();
-		for (TableauRowLabel l : rowLabels) {
-			String s = l.toString();
-			rowLabelWidth = Math.max(rowLabelWidth,
-					s.length() + winnerString.length());
-		}
 
-		// Start with col names
-		StringUtil.appendPadded(result, inputString, rowLabelWidth
-				+ extraPadding, " ");
-		for (int i = 0; i < numCols; i++) {
-			String currCol = colNames[i];
-			StringUtil.appendPadded(result, currCol, currCol.length()+extraPadding," ");
-		}
-		result.append("\n");
+	public Evaluation getEvaluation() {
+		return evaluation;
+	}
 
-		for (int row = 0; row < numRows; row++) {
-			// First do row label
-			StringUtil.appendPadded(result, rowLabels[row].toString(),
-					rowLabelWidth + extraPadding, " ");
-			
-			for (int col = 0; col < numCols; col++) {
-				int cellWidth = colNames[col].length()+extraPadding;
-				// Get violations
-				TableauCell current = contents[row][col];
-				String toPrint = current.toString();
-				StringUtil.appendPadded(result, toPrint, cellWidth, " ");
-				
+	public TableauRowLabel[] getRowLabels() {
+		return rowLabels;
+	}
 
-			}
-			result.append("\n");
-		}
-		return result.toString();
+	public String[] getColNames() {
+		return colNames;
+	}
+
+	public int getNumRows() {
+		return numRows;
+	}
+
+	public int getNumCols() {
+		return numCols;
+	}
+
+	public TableauCell getCellAt(int row, int col) {
+		return contents[row][col];
 	}
 }

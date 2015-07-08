@@ -3,7 +3,7 @@
  */
 package eval;
 
-import gen.Candidate;
+import gen.candidate.Candidate;
 
 import java.util.HashMap;
 import java.util.List;

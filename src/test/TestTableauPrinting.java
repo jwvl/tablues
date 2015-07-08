@@ -5,8 +5,8 @@ package test;
 
 import eval.Eval;
 import eval.Evaluation;
-import gen.CandidateSet;
 import gen.Grammar;
+import gen.candidate.CandidateSet;
 import hierarchy.Hierarchy;
 import io.CSVReader;
 

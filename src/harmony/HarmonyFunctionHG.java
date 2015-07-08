@@ -3,7 +3,7 @@
  */
 package harmony;
 
-import gen.Candidate;
+import gen.candidate.Candidate;
 import hierarchy.Hierarchy;
 import hierarchy.StochasticConstraint;
 

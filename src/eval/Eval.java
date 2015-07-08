@@ -3,7 +3,7 @@
  */
 package eval;
 
-import gen.CandidateSet;
+import gen.candidate.CandidateSet;
 import harmony.HarmonyFunction;
 import harmony.HarmonyFunctionOT;
 import hierarchy.Hierarchy;

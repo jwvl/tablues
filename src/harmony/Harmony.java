@@ -4,7 +4,7 @@
 package harmony;
 
 import eval.Constraint;
-import gen.Candidate;
+import gen.candidate.Candidate;
 import hierarchy.Hierarchy;
 
 /**

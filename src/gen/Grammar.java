@@ -3,6 +3,7 @@
  */
 package gen;
 
+import gen.candidate.CandidateSet;
 import hierarchy.Hierarchy;
 
 import java.util.ArrayList;

@@ -3,8 +3,8 @@
  */
 package harmony;
 
-import gen.Candidate;
-import gen.CandidateSet;
+import gen.candidate.Candidate;
+import gen.candidate.CandidateSet;
 import hierarchy.Hierarchy;
 
 import java.util.ArrayList;
